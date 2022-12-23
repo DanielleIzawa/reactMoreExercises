@@ -1,0 +1,79 @@
+:root {
+  --negative: #ff1744;
+  --positive: #2abf77;
+  --gray100: #f0f7f8;
+  --gray200: #cfd8dc;
+  --gray300: #a7b7be;
+  --gray400: #6b7e86;
+  --gray500: #425a65;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+.app {
+  font-family: Monserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  background-color: var(--gray100);
+  color: var(--gray500);
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.button-wrappe {
+  display: flex;
+
+  & > * {
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px var(--gray200);
+    font-weight: bold;
+    font-size: 2rem;
+    color: inherit;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 250ms ease-in-out, transform 50ms ease-in-out;
+  }
+  &:hover {
+    background-color: var(--gray200);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.negative {
+  color: var(--negative);
+  animation: pulse 500ms ease-in-out;
+}
+
+.positive {
+  color: var(--positive);
+  animation: pulse 500ms ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
